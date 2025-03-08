@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	height: 100vh;
+	font-family: 'Comic Neue', sans-serif;
+	font-size: 1.6rem;
+	background-color: #2c2929;
+}
+
+.title {
+	text-align: center;
+	color: #ffffff;
+	font-size: 4rem;
+	margin-top: 1em;
+	font-weight: bold;
+}
+
+h2 {
+	margin-top: 0.7em;
+	margin-bottom: -0.7em;
+	font-size: 3rem;
+	color: #fff;
+	text-align: center;
+}
+
+.main__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	height: 100vh;
+}
+
+.start {
+	padding: 1em 2em;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.player {
+	margin: 1em 0 -1em;
+	font-weight: bold;
+	font-size: 2rem;
+	color: #fff;
+	text-align: center;
+}
+
+.winner {
+	margin: 1em 0 -0.5em;
+	font-size: 3rem;
+}
+
+.game {
+	display: grid;
+	place-items: center;
+	margin: 3em auto;
+	width: 500px;
+	aspect-ratio: 1/1;
+	background-color: #40374c;
+	border-radius: 24px;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 300px;
+	aspect-ratio: 1/1;
+}
+
+.cell {
+	display: grid;
+	place-items: center;
+	width: 100px;
+	aspect-ratio: 1/1;
+	cursor: pointer;
+
+	&:nth-child(2n - 1) {
+		border-right: 10px solid #ffffff;
+		border-bottom: 10px solid #fff;
+	}
+
+	&:nth-child(3) {
+		transform: rotate(90deg);
+	}
+
+	&:nth-child(5) {
+		border: 10px solid #ffffff;
+		transform: scale(1.18);
+	}
+
+	&:nth-child(7) {
+		transform: rotate(-90deg);
+	}
+
+	&:nth-child(9) {
+		transform: rotate(-180deg);
+	}
+}
