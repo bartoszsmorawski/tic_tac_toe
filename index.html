@@ -1,13 +1,62 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Solid</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/index.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/src/image/x.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Tic Tac Toe</title>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<div id="app"></div>
+
+    <!-- Strona startowa, która pozwala na wpisanie nazw graczy i rozpoczęcie gry  -->
+
+<template id="main">
+      <div class="main__container">
+        <h1 class="title">Strona glówna</h1>
+        <input name="player1" type="text">
+        <input name="player2" type="text">
+        <button type="button" id="set-players">Dodaj graczy</button>
+        <button id="start-game" class="start">Rozpocznij grę</button>
+      </div>
+    </template>
+
+    <!-- Gra, która pozwala na rozgrywkę między dwoma graczami -->
+
+    <template id="game">
+      <h1 class="title">Tic Tac Toe</h1>
+      <!-- Dodaj licznik zwycięstw do localStorage i przy każdej grze odczytuj go i przypisz poniżej (razem z nazwami graczy) -->
+      <p style="margin-bottom: 1em;" class="player"></p>
+      <p id="player" class="player">Gracz 1</p>
+      <div id="game-container" class="game"></div>
+    </template>
+
+    <!-- Komunikat o wygraneym urzytkowniku, który pojawia się po zakończeniu gry i pozwala na rozpoczęcie nowej gry lub powrót do strony głównej -->
+     
+    <template id="win">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 2em;">
+        <h2>Wygral <span></span></h2>
+        <button id="restart-game" style="padding: 2em;">Zagraj jeszcze raz</button>
+        <button id="main-page" style="padding: 2em;">Przejdź do strony glównej</button>
+      </div>
+    </template>
+
+    <script type="module" src="/src/javascript/index.js"></script>
+    </script>
+	</body>
 </html>
